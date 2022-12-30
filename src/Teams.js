@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import withData from './withData';
+const urlTeams = 'https://www.balldontlie.io/api/v1/teams'
 
-export default function Teams() {
-    const [teams, setTeams] = useState([]);
-
-    useEffect(() => {
-        fetch("https://www.balldontlie.io/api/v1/teams").then(response => response.json()).then(result => setTeams(result.data))
-    }, [])
-
-    return <ul>{teams.map(team => <li key={team.id}>{team.full_name}</li>)}</ul>;
+function Teams({ data: teams }) {
+  return (
+    <ul>
+      {teams.map((team) => (
+        <li key={team.id}>{team.full_name}</li>
+      ))}
+    </ul>
+  );
 }
+
+export default withData(Teams, { url: urlTeams, initialState: []});
