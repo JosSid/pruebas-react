@@ -11,4 +11,4 @@ function Teams({ data: teams , style}) {
   );
 }
 
-export default withData(Teams, { url: urlTeams, initialState: []});
+export default withData({ url: urlTeams, initialState: []})(Teams);

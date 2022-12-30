@@ -12,4 +12,4 @@ function Players({ data: players }) {
   );
 }
 
-export default withData(Players,{ url: urlPlayers, initialState: []});
+export default withData({ url: urlPlayers, initialState: []})(Players);
