@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export default function withData(WrappedComponent, {url, initialState}) {
-  const WithDataComponent = () => {
+  const WithDataComponent = ({...props}) => {
     const [data, setData] = useState(initialState);
 
     useEffect(() => {
@@ -10,7 +10,7 @@ export default function withData(WrappedComponent, {url, initialState}) {
         .then((result) => setData(result.data));
     }, []);
 
-    return <WrappedComponent data={data}/>
+    return <WrappedComponent {...props} data={data} />
   };
 
   WithDataComponent.displayName = `withData(${

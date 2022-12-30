@@ -4,7 +4,7 @@ import Players from './Players';
 function App() {
   return (
     <div className="App">
-     <Teams />
+     <Teams style= {{color: 'red'}}/>
      <Players />
     </div>
   );
