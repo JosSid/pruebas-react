@@ -1,7 +1,9 @@
+import Teams from './Teams';
+
 function App() {
   return (
     <div className="App">
-     pepe
+     <Teams />
     </div>
   );
 }
