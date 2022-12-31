@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+//High Order Component HOC
 export default function withData({ url, initialState }) { //Primero pasamos los parametros y devolvemos otra funcion;
   return function (WrappedComponent) { //Funcion HOC que devyelve un componente mejorado
     const WithDataComponent = ({ ...props }) => {// Crea el componente mejorado
